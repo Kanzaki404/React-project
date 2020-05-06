@@ -2,6 +2,7 @@ nav.nav-bar-style{
     background: #333333;
     height: 60px;
     width: 100%;
+    position: sticky;
     
     img{
         height: 50px;
@@ -40,8 +41,4 @@ nav.nav-bar-style{
 //     display: block;
 // }
 
-.content{
-     border: 1px solid blue;
-     width: 700px;
-     height: 100px;
-}
+

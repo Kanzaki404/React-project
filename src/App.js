@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.scss';
 import Navbar from './components/navBar/navBar'
+import List from './components/List/list'
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       </header>
       <main>
       <div className="content">
-          <h1>hello</h1>
+          <List/>
       </div>
       </main>
       

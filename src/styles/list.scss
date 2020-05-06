@@ -1,0 +1,100 @@
+.content{
+    border: 1px solid blue;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+}
+
+.listItemContainer{
+    border: 1px solid red;
+    height: auto;
+    width: auto;
+}
+
+.searchBar{
+    text-align: center; 
+    input{
+       
+        margin: 8px 0;
+        height: 20px;
+        border-bottom: 1px solid chartreuse;
+        border-right-width: 0px;
+        border-left-width: 0px;
+        border-top-width: 0px;
+        width: 200px;
+    }
+
+}
+
+// .--------------------free css input----------------------------------------
+// <div class="form__group field">
+// <input type="input" className="form__field" placeholder="Name" name="name" id='name' required />
+// <label for="name" className="form__label">Name</label>
+// </div>
+
+
+// $primary: #11998e;
+// $secondary: #38ef7d;
+// $white: #fff;
+// $gray: #9b9b9b;
+// .form__group {
+//   position: relative;
+//   padding: 15px 0 0;
+//   margin-top: 10px;
+//   width: 100%;
+//   text-align: center;
+// }
+
+// .form__field {
+//   font-family: inherit;
+//   width: 100%;
+//   border: 0;
+//   border-bottom: 2px solid $gray;
+//   outline: 0;
+//   font-size: 1.3rem;
+//   color: black;
+//   padding: 7px 0;
+//   background: transparent;
+//   transition: border-color 0.2s;
+
+//   &::placeholder {
+//     color: transparent;
+//   }
+
+//   &:placeholder-shown ~ .form__label {
+//     font-size: 1.3rem;
+//     cursor: text;
+//     top: 20px;
+//   }
+// }
+
+// .form__label {
+//   position: absolute;
+//   top: 0;
+//   display: block;
+//   transition: 0.2s;
+//   font-size: 1rem;
+//   color: $gray;
+// }
+
+// .form__field:focus {
+//   ~ .form__label {
+//     position: absolute;
+//     top: 0;
+//     display: block;
+//     transition: 0.2s;
+//     font-size: 1rem;
+//     color: $primary;
+//     font-weight:700;    
+//   }
+//   padding-bottom: 6px;  
+//   font-weight: 700;
+//   border-width: 3px;
+//   border-image: linear-gradient(to right, $primary,$secondary);
+//   border-image-slice: 1;
+// }
+// /* reset input */
+// .form__field{
+//   &:required,&:invalid { box-shadow:none; }
+// }
