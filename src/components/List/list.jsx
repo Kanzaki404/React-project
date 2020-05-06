@@ -1,6 +1,7 @@
 import React from 'react'
 import ListItem from './list-item/list-item'
-const list = () => {
+import FavItem from './list-item/favorite-list-item'
+const List = ({tabSelected}) => {
 
     return (
         <div className="listComponent">
@@ -9,11 +10,13 @@ const list = () => {
             </div>
            
             <div className="listItemContainer">
-                <ListItem />
+                {tabSelected === 'search' ? <ListItem />:  <FavItem/>}
+                
+              
             </div>
         </div>
     );
 };
 
 
-export default list
+export default List
