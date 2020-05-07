@@ -1,6 +1,10 @@
-import React from 'react'
+import React, {useLayoutEffect} from 'react'
 
 const FavItems = () => {
+    useLayoutEffect(()=>{
+        console.log('hello')
+       },[])
+    
     return (
         <div className ="listItem">
             <div className= "Item">

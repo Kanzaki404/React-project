@@ -1,14 +1,22 @@
 import React from 'react'
 
-const listItem = () => {
+const ListItem = ({data}) => {
+    const elements = data.map(e => (
+        <div key={e.name}>
+            <div>{e.name}</div>
+        </div>
+    ))
+//    useEffect(()=>{
+       
+//    },[data])
+
     return (
         <div className ="listItem">
             <div className= "Item">
-                <h1>Item in the list</h1>
+                {elements}
             </div>
-            
         </div>
       );
 }
 
-export default listItem
+export default ListItem
