@@ -2,12 +2,17 @@ import React, { useState} from 'react'
 
 const ListItem = ({data,addFav}) => {
     const [input, setInput] = useState('')
+    const [disable, setDisable] = useState(true)
     const elements = data.filter(el => el.name.toLowerCase().match(input)).map(e => (
         <div className="card"  key={e.name}>
             <div className="container">
                 <div>Name: {e.name}</div>
                 <div>Age: {e.birth_year}</div>
-                <button className="favBtn" onClick={() => addToFavorite(e)}>Add To Favorites</button>
+                <button 
+                    className="favBtn" 
+                    onClick={() => addToFavorite(e)}
+                   
+                    >Add To Favorites</button>
             </div>
         </div>
     ))

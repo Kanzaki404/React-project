@@ -3,7 +3,7 @@ import ListItem from './list-item/list-item'
 import FavItem from './list-item/favorite-list-item'
 import axios from 'axios';
 
-
+let bin2 = []
 const List = ({tabSelected}) => {
     const [people, setPeople] = useState([])
     const [favorite, setFavorite] = useState([])
@@ -13,17 +13,21 @@ const List = ({tabSelected}) => {
        callApi(setPeople, baseUrl)
     //    console.log(people)
       
-      setToFavoriteList(favorite) // eslint-disable-next-line
+      // eslint-disable-next-line
     },[]) 
     
-    let bin = []
+    
     function setToFavoriteList (element){
-        
+        if(bin2.some(el => el.name === element.name)){
+            console.log('already exists')
+        }else{
+            let bin = []
+        bin = [...bin,element]   
         console.log('setToFavorite fired')
-        bin.push(element)
-        setFavorite(bin)
-        console.log(bin)
-       // console.log(favorite)
+        bin2.push(...bin)
+        setFavorite([...bin2]) 
+        }
+       
     }
 
     return (
