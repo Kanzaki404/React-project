@@ -3,25 +3,15 @@ import ListItem from './list-item/list-item'
 import FavItem from './list-item/favorite-list-item'
 import axios from 'axios';
 
+
 const List = ({tabSelected}) => {
     //let people = []
-    const [people, setPeople] =useState([])
+    const [people, setPeople] = useState([])
     const baseUrl = 'https://swapi.dev/api/people/'
-    
     useEffect(() => {
-        let temp = []
-        axios.get(`${baseUrl}`)
-            .then(res => {
-                
-             //  people.push(res.data.resulst)
-             console.log(res)
-             temp = [...res.data.results]
-             setPeople(temp)
-                console.log(res.data.results)
-                console.log(people)
-            })
-            .catch(err => console.log('ERROR ---> ' + err))    
-    },[tabSelected])
+       callApi(setPeople, baseUrl)
+       console.log(people)
+    },[])
 
    
 
@@ -46,6 +36,27 @@ const List = ({tabSelected}) => {
         </div>
     );
 };
-
+let temp2 = []
+function callApi(setPeople, baseUrl){
+    
+    //const baseUrl = 'https://swapi.dev/api/people/'
+    let temp = []
+    
+    axios.get(`${baseUrl}`)
+    .then(res => {
+        
+        //  people.push(res.data.resulst)
+        temp = [...res.data.results]
+        temp2.push(...temp)
+        setPeople([...temp2])
+        console.log(temp2)
+        if(res.data.next !== null){
+           callApi(setPeople,res.data.next)
+        }
+        
+       
+    })
+    .catch(err => console.log('ERROR ---> ' + err))    
+}
 
 export default List
