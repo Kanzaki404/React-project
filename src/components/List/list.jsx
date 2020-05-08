@@ -10,8 +10,8 @@ const List = ({tabSelected}) => {
     const baseUrl = 'https://swapi.dev/api/people/'
     useEffect(() => {
        callApi(setPeople, baseUrl)
-       console.log(people)
-    },[])
+       console.log(people)// eslint-disable-next-line
+    },[]) 
 
    
 
@@ -29,13 +29,19 @@ const List = ({tabSelected}) => {
             <div className="searchBar">
                 <input />
             </div>
-           
+            <button onClick={scroll} className="toTop">To top</button>
             <div className="listItemContainer">
                 {tabSelected === 'search' ? <ListItem data={people} />:  <FavItem/>}
+               
+                
             </div>
         </div>
     );
 };
+
+function scroll(){
+    window.scrollTo(0, 0)
+}
 let temp2 = []
 function callApi(setPeople, baseUrl){
     

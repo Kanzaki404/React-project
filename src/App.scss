@@ -1,2 +1,11 @@
 @import './styles/navBar.scss';
 @import './styles/list.scss';
+@import './styles/card.scss';
+
+.App{
+    background: url('./solar-image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}

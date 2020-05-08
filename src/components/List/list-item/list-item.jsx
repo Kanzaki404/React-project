@@ -2,9 +2,13 @@ import React from 'react'
 
 const ListItem = ({data}) => {
     const elements = data.map(e => (
-        <div key={e.name}>
-            <div>{e.name}</div>
+        <div className="card"  key={e.name}>
+            <div className="container">
+                <div>Name: {e.name}</div>
+                <div>Age: {e.birth_year}</div>
+            </div>
         </div>
+        
     ))
 //    useEffect(()=>{
        

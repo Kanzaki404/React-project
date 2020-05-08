@@ -8,10 +8,29 @@
 
 .listItemContainer{
     border: 1px solid red;
-    height: auto;
     width: auto;
+    height: 600px;
+    width: auto;
+    overflow-y: scroll;
+    
 }
 
+
+
+::-webkit-scrollbar {
+    width: 5px;
+   
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(102, 102, 102); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    /* background: #888;  */
+    background: chartreuse;
+  }
 .searchBar{
     text-align: center; 
     input{
@@ -23,10 +42,30 @@
         border-left-width: 0px;
         border-top-width: 0px;
         width: 200px;
+        background-color: transparent;
+        outline-width: 0;
+        color: chartreuse;
     }
 
+    
 }
 
+$danger : #dc3545;
+.toTop{
+    border: 1px solid $danger ;
+    background: transparent;
+    color: white;
+    margin-bottom: 10px;
+    width: 75px;
+    height: 30px;
+}
+
+.toTop:hover{
+    background-color: $danger ;
+    color: black;
+     
+
+}
 // .--------------------free css input----------------------------------------
 // <div class="form__group field">
 // <input type="input" className="form__field" placeholder="Name" name="name" id='name' required />
