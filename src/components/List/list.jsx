@@ -6,35 +6,33 @@ import axios from 'axios';
 
 const List = ({tabSelected}) => {
     const [people, setPeople] = useState([])
+    const [favorite, setFavorite] = useState([])
     const baseUrl = 'https://swapi.dev/api/people/'
+
     useEffect(() => {
        callApi(setPeople, baseUrl)
-       console.log(people)
-       
-
-      // eslint-disable-next-line
+    //    console.log(people)
+      
+      setToFavoriteList(favorite) // eslint-disable-next-line
     },[]) 
-
-    // useEffect(() =>{
-    //    filterr(people,input,setPeople)
-    // },[input])
     
+    let bin = []
+    function setToFavoriteList (element){
+        
+        console.log('setToFavorite fired')
+        bin.push(element)
+        setFavorite(bin)
+        console.log(bin)
+       // console.log(favorite)
+    }
 
-    // function getData(){
-    //     console.log('getData Fired')
-    //     axios.get(baseUrl)
-    //     .then(res => {
-    //         people = res.data.results
-    //         console.log(people)
-    //     })
-    //     .catch(err => console.log('Error ---> ' + err))
-    // }
     return (
         <div className="listComponent">
             
             <button className="toTop">To top</button>
             <div className="listItemContainer">
-                {tabSelected === 'search' ? <ListItem data={people} />:  <FavItem/>}
+                {tabSelected === 'Search' ? <ListItem data={people} addFav={(element) => setToFavoriteList(element)} />: 
+                 <FavItem favData={favorite} />}
                
                 
             </div>
@@ -42,13 +40,6 @@ const List = ({tabSelected}) => {
     );
 };
 
-
-// function filterr(people,input,setPeople){
-//     console.log(input)
-//     people.filter((e) =>{
-//     e.name.includes(input).map(setPeople(e))
-//     });
-// }
 
 let temp2 = []
 function callApi(setPeople, baseUrl){
@@ -63,7 +54,7 @@ function callApi(setPeople, baseUrl){
         temp = [...res.data.results]
         temp2.push(...temp)
         setPeople([...temp2])
-        console.log(temp2)
+        //console.log(temp2)
         if(res.data.next !== null){
            callApi(setPeople,res.data.next)
         }

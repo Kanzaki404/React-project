@@ -7,8 +7,8 @@ const Navbar = ({tabCallback}) => {
       <nav className="nav-bar-style">
         <img src={logo} alt="logo" /> 
         <ul>
-            <li> <button onClick={ () => tabCallback('search')}> Search</button> </li>
-            <li> <button onClick={ () => tabCallback('favorite')}> Favorites</button> </li>
+            <li> <button onClick={ () => tabCallback('Search')}> Search</button> </li>
+            <li> <button onClick={ () => tabCallback('Favorite')}> Favorites</button> </li>
         </ul>
       </nav>
     );

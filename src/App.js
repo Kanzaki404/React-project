@@ -6,7 +6,7 @@ import List from './components/list/list'
 
 function App() {
 
-  const [currentTab, setCurrentTab] = useState('search')
+  const [currentTab, setCurrentTab] = useState('Search')
 
   function tab(category){
     setCurrentTab(category)
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Navbar tabCallback={(cat) => tab(cat) }/>
-          <h1>{currentTab}</h1>
+          <h1 className="titleTab">{currentTab}</h1>
       </header>
       <main>
       <div className="content">
