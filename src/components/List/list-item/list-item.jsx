@@ -2,7 +2,6 @@ import React, { useState} from 'react'
 
 const ListItem = ({data,addFav}) => {
     const [input, setInput] = useState('')
-    const [disable, setDisable] = useState(true)
     const elements = data.filter(el => el.name.toLowerCase().match(input.toLowerCase())).map(e => (
         <div className="card"  key={e.name}>
             <div className="container">
