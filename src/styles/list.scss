@@ -1,13 +1,12 @@
 .content{
-    border: 1px solid blue;
     width: auto;
     height: auto;
     margin: 10px;
     padding: 10px;
 }
 
-.listItemContainer{
-    border: 1px solid red;
+.listItem{
+    border-top: 1px solid rgb(168, 168, 168);
     width: auto;
     height: 600px;
     width: auto;
@@ -24,12 +23,14 @@
   /* Track */
   ::-webkit-scrollbar-track {
     background: rgb(102, 102, 102); 
+    margin-top: 20px;
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
     /* background: #888;  */
-    background: chartreuse;
+    background: rgb(168, 168, 168);
+    
   }
 .searchBar{
     text-align: center; 

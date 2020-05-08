@@ -5,15 +5,20 @@ import axios from 'axios';
 
 
 const List = ({tabSelected}) => {
-    //let people = []
     const [people, setPeople] = useState([])
     const baseUrl = 'https://swapi.dev/api/people/'
     useEffect(() => {
        callApi(setPeople, baseUrl)
-       console.log(people)// eslint-disable-next-line
+       console.log(people)
+       
+
+      // eslint-disable-next-line
     },[]) 
 
-   
+    // useEffect(() =>{
+    //    filterr(people,input,setPeople)
+    // },[input])
+    
 
     // function getData(){
     //     console.log('getData Fired')
@@ -26,10 +31,8 @@ const List = ({tabSelected}) => {
     // }
     return (
         <div className="listComponent">
-            <div className="searchBar">
-                <input />
-            </div>
-            <button onClick={scroll} className="toTop">To top</button>
+            
+            <button className="toTop">To top</button>
             <div className="listItemContainer">
                 {tabSelected === 'search' ? <ListItem data={people} />:  <FavItem/>}
                
@@ -39,9 +42,14 @@ const List = ({tabSelected}) => {
     );
 };
 
-function scroll(){
-    window.scrollTo(0, 0)
-}
+
+// function filterr(people,input,setPeople){
+//     console.log(input)
+//     people.filter((e) =>{
+//     e.name.includes(input).map(setPeople(e))
+//     });
+// }
+
 let temp2 = []
 function callApi(setPeople, baseUrl){
     
