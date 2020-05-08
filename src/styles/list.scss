@@ -8,7 +8,7 @@
 .listItem{
     border-top: 1px solid rgb(168, 168, 168);
     width: auto;
-    height: 600px;
+    height: 500px;
     width: auto;
     overflow-y: scroll;
     
@@ -59,6 +59,7 @@ $danger : #dc3545;
     margin-bottom: 10px;
     width: 75px;
     height: 30px;
+    display: block;
 }
 
 .toTop:hover{

@@ -3,7 +3,7 @@ import React, { useState} from 'react'
 const ListItem = ({data,addFav}) => {
     const [input, setInput] = useState('')
     const [disable, setDisable] = useState(true)
-    const elements = data.filter(el => el.name.toLowerCase().match(input)).map(e => (
+    const elements = data.filter(el => el.name.toLowerCase().match(input.toLowerCase())).map(e => (
         <div className="card"  key={e.name}>
             <div className="container">
                 <div>Name: {e.name}</div>
@@ -25,6 +25,7 @@ const ListItem = ({data,addFav}) => {
     return (
         <div className="listContainer">
             <div className="searchBar">
+            <button className="toTop" onClick={window.scrollTo(0,0)}>To top</button>
                 <input value={input} onChange={e => setInput(e.target.value)}></input>
             </div>
             

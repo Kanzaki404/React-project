@@ -19,7 +19,7 @@ const List = ({tabSelected}) => {
     
     function setToFavoriteList (element){
         if(bin2.some(el => el.name === element.name)){
-            console.log('already exists')
+            alert('already exists')
         }else{
             let bin = []
         bin = [...bin,element]   
@@ -33,7 +33,7 @@ const List = ({tabSelected}) => {
     return (
         <div className="listComponent">
             
-            <button className="toTop">To top</button>
+            
             <div className="listItemContainer">
                 {tabSelected === 'Search' ? <ListItem data={people} addFav={(element) => setToFavoriteList(element)} />: 
                  <FavItem favData={favorite} />}
