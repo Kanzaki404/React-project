@@ -5,7 +5,7 @@ import Navbar from './components/navBar/navBar'
 import List from './components/list/list'
 
 function App() {
-
+  //state of cuttent tab selected by user to chose which list to render
   const [currentTab, setCurrentTab] = useState('Search')
 
   function tab(category){

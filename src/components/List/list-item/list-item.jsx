@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 
-const ListItem = ({data,addFav}) => {
+const ListItem = ({data,dataPlanets,addFav}) => {
     const [input, setInput] = useState('')
     const elements = data.filter(el => el.name.toLowerCase().match(input.toLowerCase()) || // filter by name, eye_color, and birth year
     el.eye_color.toLowerCase().match(input.toLowerCase()) ||
@@ -12,13 +12,29 @@ const ListItem = ({data,addFav}) => {
                 <div>Age:{e.birth_year}</div>
                 <button 
                     className="favBtn" 
-                    onClick={() => addFav(e)}
+                    onClick={() => addFav(e,"people")}
                    
                     >Add To Favorites</button>
             </div>
         </div>
     ))
-
+        //im not sure how to filter when combined due to object in other list missing keys (ex eye_color: undefined) as the other ugly duplicate code
+    const elementsPlanet = dataPlanets.filter(el => el.name.toLowerCase().match(input.toLowerCase()) || // filter by name, climate, and terrain
+    el.climate.toLowerCase().match(input.toLowerCase()) ||
+    el.terrain.toLowerCase().match(input.toLowerCase())).map(e => ( //at the end map the filtered list and loop to show the elements
+        <div className="card"  key={e.name}>
+            <div className="container">
+                <div>Name: {e.name}</div>
+                <div>Climate: {e.climate}</div>
+                <div>Terrain: {e.terrain}</div>
+                <button 
+                    className="favBtn" 
+                    onClick={() => addFav(e,"planets")}
+                   
+                    >Add To Favorites</button>
+            </div>
+        </div>
+    ))
     return (
         <div className="listContainer">
             <div className="searchBar">
@@ -30,6 +46,9 @@ const ListItem = ({data,addFav}) => {
             <div className ="listItem">
                 <div className= "Item">
                     {elements}
+                </div>
+                <div className= "Item">        
+                    {elementsPlanet}
                 </div>
             </div>
         </div>
