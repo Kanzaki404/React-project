@@ -17,31 +17,40 @@ const List = ({tabSelected}) => {
     },[]) 
     
     
-    function setToFavoriteList (element){
-        if(bin2.some(el => el.name === element.name)){
+    function setToFavoriteList (element){ // add element to fav
+        console.log('setToFavorite fired')
+        if(bin2.some(el => el.name === element.name)){ //check if element already exist in the list
             alert('already exists')
         }else{
-            let bin = []
-        bin = [...bin,element]   
-        console.log('setToFavorite fired')
-        bin2.push(...bin)
-        setFavorite([...bin2]) 
+        let bin = []
+        bin = [...bin,element]   // set new element in bin
+        bin2.push(...bin) // save it in global bin2 to keep data
+        setFavorite([...bin2]) //save it to state
         }
        
     }
 
-    return (
+    function removeFromFavorite(element){ //remove element
+        const index = bin2.indexOf(element) //find index of specific element
+        if (index > -1) {
+            bin2.splice(index, 1); //remove if correct index found
+          }
+        setFavorite([...bin2]) // add the new list to state (with element removed)
+        
+    }
+
+    return (// tabSelected data from nav component chooses which list is shown
         <div className="listComponent">
             
             
-            <div className="listItemContainer">
+            <div className="listItemContainer"> 
                 {tabSelected === 'Search' ? <ListItem data={people} addFav={(element) => setToFavoriteList(element)} />: 
-                 <FavItem favData={favorite} />}
+                 <FavItem favData={favorite} remFav={(elem) => removeFromFavorite(elem)}/>}
                
                 
             </div>
         </div>
-    );
+    ); 
 };
 
 

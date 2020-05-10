@@ -2,24 +2,22 @@ import React, { useState} from 'react'
 
 const ListItem = ({data,addFav}) => {
     const [input, setInput] = useState('')
-    const elements = data.filter(el => el.name.toLowerCase().match(input.toLowerCase())).map(e => (
+    const elements = data.filter(el => el.name.toLowerCase().match(input.toLowerCase()) || // filter by name, eye_color, and birth year
+    el.eye_color.toLowerCase().match(input.toLowerCase()) ||
+    el.birth_year.toLowerCase().match(input.toLowerCase())).map(e => ( //at the end map the filtered list and loop to show the elements
         <div className="card"  key={e.name}>
             <div className="container">
-                <div>Name: {e.name}</div>
-                <div>Age: {e.birth_year}</div>
+                <div>Name:{e.name}</div>
+                <div>Eye Color: {e.eye_color}</div>
+                <div>Age:{e.birth_year}</div>
                 <button 
                     className="favBtn" 
-                    onClick={() => addToFavorite(e)}
+                    onClick={() => addFav(e)}
                    
                     >Add To Favorites</button>
             </div>
         </div>
     ))
-
-    function addToFavorite(element){
-        //console.log(element)
-        addFav(element)
-    }
 
     return (
         <div className="listContainer">
