@@ -1,5 +1,5 @@
 {
-  "homepage": "http://Kanzaki404.github.io/ReactAssig1",
+  "homepage": "http://Kanzaki404.github.io/ReactAssig1/",
   "name": "star-wars-api",
   "version": "0.1.0",
   "private": true,
@@ -11,7 +11,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "react-svg-pan-zoom": "^3.8.0"
+    "react-svg-pan-zoom": "^3.8.0",
+    "standard": "^14.3.4"
   },
   "scripts": {
     "predeploy": "npm run build",
