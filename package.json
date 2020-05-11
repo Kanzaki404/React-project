@@ -10,8 +10,7 @@
     "axios": "^0.19.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "react-svg-pan-zoom": "^3.8.0"
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "predeploy": "npm run build",
