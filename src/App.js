@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './App.scss'
 import Navbar from './components/navBar/navBar'
-import List from './components/list/List'
+import List from './components/List/list'
 
 function App () {
   // state of cuttent tab selected by user to chose which list
