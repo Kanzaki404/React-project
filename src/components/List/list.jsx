@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ListItem from './list-item/list-item'
-import FavItem from './list-item/favorite-list-item'
+import FavItems from './list-item/favorite-list-item'
 import axios from 'axios'
 
 const binForPeople = []
@@ -74,7 +74,7 @@ const List = ({ tabSelected }) => {
             addFav={(element, from) => setToFavoriteList(element, from)}
           />
         ) : (
-          <FavItem
+          <FavItems
             favData={favoritePeople}
             favDataPlanets={favoritePlanets}
             remFav={(elem, from) => removeFromFavorite(elem, from)}
