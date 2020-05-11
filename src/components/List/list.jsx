@@ -64,8 +64,8 @@ const List = ({tabSelected}) => {
        
         
     }
-
-    return (// tabSelected data from nav component chooses which list is shown
+// tabSelected data from nav component chooses which list is shown
+    return (
         <div className="listComponent">
             
             
