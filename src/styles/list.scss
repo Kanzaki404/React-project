@@ -23,14 +23,15 @@
        
         margin: 8px 0;
         height: 20px;
-        border-bottom: 1px solid chartreuse;
-        border-right-width: 0px;
-        border-left-width: 0px;
-        border-top-width: 0px;
         width: 200px;
-        background-color: transparent;
+        background-color: rgba(100,100,100,0.5);
         outline-width: 0;
         color: chartreuse;
+        border: none;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 5px;
     }
 
     
@@ -38,6 +39,7 @@
 .category{
     display: flex;
     color: white;
+    justify-content: center;
     li{
         list-style: none;
         button{

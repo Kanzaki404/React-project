@@ -5,7 +5,7 @@ const Navbar = ({tabCallback}) => {
     
     return (//update state in app depending which tab/button pressed
       <nav className="nav-bar-style">
-        <img src={logo} alt="logo" /> 
+        <img onClick={ () => tabCallback('Search')} src={logo} alt="logo" /> 
         <ul>
             <li> <button onClick={ () => tabCallback('Search')}> Search</button> </li> 
             <li> <button onClick={ () => tabCallback('Favorite')}> Favorites</button> </li>
