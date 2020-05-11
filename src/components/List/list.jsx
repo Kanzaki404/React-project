@@ -49,14 +49,12 @@ const List = ({tabSelected}) => {
 
     function removeFromFavorite(element,from){ //remove element
         if(from === "people"){
-            console.log('here1')
             const indexPeople = binForPeople.indexOf(element) //find index of specific element
             if (indexPeople > -1) {
                 binForPeople.splice(indexPeople, 1); //remove if correct index found
               }
             setFavoritePeople([...binForPeople]) // add the new list to state (with element removed)
         }else{
-            console.log('here2')
             const indexPlanets = binForPlanets.indexOf(element) //find index of specific element
             if (indexPlanets > -1) {
                 binForPlanets.splice(indexPlanets, 1); //remove if correct index found
@@ -84,13 +82,12 @@ const List = ({tabSelected}) => {
 
 let temp2 = []
 function callApi(setPeople, baseUrl){
-    let temp = []  
+      
     axios.get(`${baseUrl}`)
     .then(res => {
-        temp = [...res.data.results]
-        temp2.push(...temp)
+      
+        temp2.push(...res.data.results)
         setPeople([...temp2])
-        console.log(res)
         if(res.data.next !== null){
            callApi(setPeople,res.data.next)
         }
@@ -104,14 +101,14 @@ let temp2Plantes = []
 function callApiPlanets(setPlanets, baseUrlPlanets){
     
     //const baseUrl = 'https://swapi.dev/api/people/'
-    let temp = []
+  
     axios.get(`${baseUrlPlanets}`)
     .then(res => {
-        temp = [...res.data.results]
-        temp2Plantes.push(...temp)
+        
+        temp2Plantes.push(...res.data.results)
         setPlanets([...temp2Plantes])
         if(res.data.next !== null){
-            console.log('cameHere')
+
            callApiPlanets(setPlanets,res.data.next)
         }
         

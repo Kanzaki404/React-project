@@ -16,22 +16,7 @@
 
 
 
-::-webkit-scrollbar {
-    width: 5px;
-   
-  }
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: rgb(102, 102, 102); 
-    margin-top: 20px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    /* background: #888;  */
-    background: rgb(168, 168, 168);
-    
-  }
+
 .searchBar{
     text-align: center; 
     input{
@@ -50,92 +35,37 @@
 
     
 }
-
-$danger : #dc3545;
-.toTop{
-    border: 1px solid $danger ;
-    background: transparent;
+.category{
+    display: flex;
     color: white;
-    margin-bottom: 10px;
-    width: 75px;
-    height: 30px;
-    display: block;
+    li{
+        list-style: none;
+        button{
+            margin: 4px;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            outline-width: 0;
+        }
+    }
+
 }
 
-.toTop:hover{
-    background-color: $danger ;
-    color: black;
-     
-
-}
-// .--------------------free css input----------------------------------------
-// <div class="form__group field">
-// <input type="input" className="form__field" placeholder="Name" name="name" id='name' required />
-// <label for="name" className="form__label">Name</label>
-// </div>
-
-
-// $primary: #11998e;
-// $secondary: #38ef7d;
-// $white: #fff;
-// $gray: #9b9b9b;
-// .form__group {
-//   position: relative;
-//   padding: 15px 0 0;
-//   margin-top: 10px;
-//   width: 100%;
-//   text-align: center;
-// }
-
-// .form__field {
-//   font-family: inherit;
-//   width: 100%;
-//   border: 0;
-//   border-bottom: 2px solid $gray;
-//   outline: 0;
-//   font-size: 1.3rem;
-//   color: black;
-//   padding: 7px 0;
-//   background: transparent;
-//   transition: border-color 0.2s;
-
-//   &::placeholder {
-//     color: transparent;
-//   }
-
-//   &:placeholder-shown ~ .form__label {
-//     font-size: 1.3rem;
-//     cursor: text;
-//     top: 20px;
-//   }
-// }
-
-// .form__label {
-//   position: absolute;
-//   top: 0;
-//   display: block;
-//   transition: 0.2s;
-//   font-size: 1rem;
-//   color: $gray;
-// }
-
-// .form__field:focus {
-//   ~ .form__label {
-//     position: absolute;
-//     top: 0;
-//     display: block;
-//     transition: 0.2s;
-//     font-size: 1rem;
-//     color: $primary;
-//     font-weight:700;    
-//   }
-//   padding-bottom: 6px;  
-//   font-weight: 700;
-//   border-width: 3px;
-//   border-image: linear-gradient(to right, $primary,$secondary);
-//   border-image-slice: 1;
-// }
-// /* reset input */
-// .form__field{
-//   &:required,&:invalid { box-shadow:none; }
-// }
+::-webkit-scrollbar {
+    width: 5px;
+   
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(102, 102, 102); 
+    margin-top: 20px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    /* background: #888;  */
+    background: rgb(168, 168, 168);
+    
+  }

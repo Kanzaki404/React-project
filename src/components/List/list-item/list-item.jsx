@@ -7,12 +7,13 @@ const ListItem = ({data,dataPlanets,addFav}) => {
     el.birth_year.toLowerCase().match(input.toLowerCase())).map(e => ( //at the end map the filtered list and loop to show the elements
         <div className="card"  key={e.name}>
             <div className="container">
+                <p>CHARACTER</p>
                 <div>Name:{e.name}</div>
                 <div>Eye Color: {e.eye_color}</div>
                 <div>Age:{e.birth_year}</div>
                 <button 
                     className="favBtn" 
-                    onClick={() => addFav(e,"people")}
+                    onClick={() => addFav(e,"people")} // so it know from which list to delete
                    
                     >Add To Favorites</button>
             </div>
@@ -24,6 +25,7 @@ const ListItem = ({data,dataPlanets,addFav}) => {
     el.terrain.toLowerCase().match(input.toLowerCase())).map(e => ( //at the end map the filtered list and loop to show the elements
         <div className="card"  key={e.name}>
             <div className="container">
+                <p>PLANET</p>
                 <div>Name: {e.name}</div>
                 <div>Climate: {e.climate}</div>
                 <div>Terrain: {e.terrain}</div>
@@ -38,7 +40,6 @@ const ListItem = ({data,dataPlanets,addFav}) => {
     return (
         <div className="listContainer">
             <div className="searchBar">
-            <button className="toTop" onClick={window.scrollTo(0,0)}>To top</button>
                 <input value={input} onChange={e => setInput(e.target.value)}></input>
             </div>
             
