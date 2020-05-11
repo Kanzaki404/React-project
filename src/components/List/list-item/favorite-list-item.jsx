@@ -33,7 +33,7 @@ const FavItems = ({ favData, favDataPlanets, remFav }) => {
     </div>
   ))
   const showAll = [...elementsPlanets, ...elements]
-  // let current;
+
   function tabSelected (cat) {
     switch (cat) {
       case 'all':

@@ -5,11 +5,11 @@ const ListItem = ({ data, dataPlanets, addFav }) => {
   const elements = data
     .filter(
       (el) =>
-        el.name.toLowerCase().match(input.toLowerCase()) || // filter by name, eye_color, and birth year
+        el.name.toLowerCase().match(input.toLowerCase()) || 
         el.eye_color.toLowerCase().match(input.toLowerCase()) ||
         el.birth_year.toLowerCase().match(input.toLowerCase())
     )
-    .map((e) => ( // at the end map the filtered list and loop to show the elements
+    .map((e) => ( 
       <div className='card' key={e.name}>
         <div className='container'>
           <p>CHARACTER</p>
@@ -18,22 +18,22 @@ const ListItem = ({ data, dataPlanets, addFav }) => {
           <div>Age:{e.birth_year}</div>
           <button
             className='favBtn'
-            onClick={() => addFav(e, 'people')} // so it know from which list to delete
+            onClick={() => addFav(e, 'people')} 
           >
             Add To Favorites
           </button>
         </div>
       </div>
     ))
-  // im not sure how to filter when combined due to object in other list missing keys (ex eye_color: undefined) as the other ugly duplicate code
+  
   const elementsPlanet = dataPlanets
     .filter(
       (el) =>
-        el.name.toLowerCase().match(input.toLowerCase()) || // filter by name, climate, and terrain
+        el.name.toLowerCase().match(input.toLowerCase()) || 
         el.climate.toLowerCase().match(input.toLowerCase()) ||
         el.terrain.toLowerCase().match(input.toLowerCase())
     )
-    .map((e) => ( // at the end map the filtered list and loop to show the elements
+    .map((e) => ( 
       <div className='card' key={e.name}>
         <div className='container'>
           <p>PLANET</p>

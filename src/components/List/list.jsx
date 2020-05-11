@@ -63,7 +63,7 @@ const List = ({ tabSelected }) => {
       setFavoritePlanets([...binForPlanets]) // add the new list to state (with element removed)
     }
   }
-  // tabSelected data from nav component chooses which list is shown
+  
   return (
     <div className='listComponent'>
       <div className='listItemContainer'>
@@ -101,7 +101,7 @@ function callApi (setPeople, baseUrl) {
 
 const temp2Plantes = []
 function callApiPlanets (setPlanets, baseUrlPlanets) {
-  // const baseUrl = 'https://swapi.dev/api/people/'
+  
 
   axios
     .get(`${baseUrlPlanets}`)
