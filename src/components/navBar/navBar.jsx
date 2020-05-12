@@ -7,15 +7,15 @@ const Navbar = ({ tabCallback }) => {
       <img onClick={() => tabCallback('Search')} src={logo} alt='logo' />
       <ul>
         <li>
-          {' '}
-          <button onClick={() => tabCallback('Search')}> Search</button>{' '}
+          
+          <button onClick={() => tabCallback('Search')}> Search</button>
         </li>
         <li>
-          {' '}
+          
           <button onClick={() => tabCallback('Favorite')}>
-            {' '}
+            
             Favorites
-          </button>{' '}
+          </button>
         </li>
       </ul>
     </nav>
