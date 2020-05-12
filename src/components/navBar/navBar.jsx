@@ -3,7 +3,6 @@ import logo from '../../logo.svg'
 
 const Navbar = ({ tabCallback }) => {
   return (
-    // update state in app depending which tab/button pressed
     <nav className='nav-bar-style'>
       <img onClick={() => tabCallback('Search')} src={logo} alt='logo' />
       <ul>
